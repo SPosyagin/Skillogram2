@@ -1,0 +1,123 @@
+a { 
+    text-decoration: none;
+    font-family: Georgia;
+}
+#logo {
+	height: 70px;
+	float:left;
+}
+#header {
+	text-align: right;
+	height: 75px;
+}
+#menu li {
+	display: inline-block;
+	font-size: 25px;
+	padding:  20px 4px;
+}
+#search {
+	padding-right: 10px;
+	float: right;
+}
+#content_container {
+	width: 400px;
+	margin: 30px auto;
+    outline: 1px solid #000; /* Чёрная рамка */
+    border: 10px solid #fff; /* Белая рамка */
+     border-radius: 10px; 
+   }
+.avatar {
+	float: left;
+	width: 40px;
+	height: 40px;
+	padding-bottom: 5px;
+
+}
+.content {
+	padding: 10px 0px;
+}
+	.content img {
+		margin: auto;
+		max-width: 400px;
+		
+	}
+.username {
+	font-size: 20px;
+	margin-left: 50px;
+}
+.time {
+	font-size: 15px;
+	margin-left: 50px;
+}
+.likes {
+	float: left;
+	margin-top: 10px;
+	font-size: 25px;
+}
+.comment {
+	font-size: 17px;
+	margin-left: 80px;
+}
+.hash_tag {
+	font-size: 15px;
+	padding-bottom: 20px;
+	margin-left: 80px;
+}
+#footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 40px;
+	width: 100%;
+}
+.contacts_test {
+	margin-top: 50px;
+	text-align: center;
+	font-size: 40px;
+}
+.posts_send {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+	background-color: #E3E7DA;
+}
+.send_text {
+	margin: 10px auto;
+	padding: 3px;
+}
+.button {
+	margin-bottom: 20px;
+	text-align: center;
+        border: 1px solid #333; 
+        display: inline-block;
+        padding: 5px 15px; 
+        text-decoration: none; 
+        color: #000; 
+ }
+ 	.button:hover {
+ 		box-shadow: 0 0 5px rgba(0,0,0,0.3);
+ 		background: linear-gradient(to bottom, #fcfff4, #e9e9ce);
+ 		color: #a00;
+ 	}
+.sorry {
+	margin: 50px auto;
+	text-align: center;
+	font-size: 40px;
+}
+.result {
+	font-size: 30px;
+	text-align: center;
+}
+.enter {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+	background-color: #E3E7DA;
+}
+.form_login {
+	margin: 10px auto;
+	padding: 3px;
+}
+#login {
+    font-size: 20px;
+}
