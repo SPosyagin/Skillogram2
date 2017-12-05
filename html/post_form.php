@@ -12,8 +12,8 @@
 	<div class="content">
 		<img src=<?php echo $post['content']; ?> />
 	</div>
-	<div class="likes">
-		<img class = 'like_img' src="assets/img/like_off.png"/> 
+	<div class=<?php echo $like_status ;?>></div>
+        <div class="count_like">
                 <span><?php echo $post['count_like']; ?></span>
 	</div>
 	<div class="comment">
@@ -24,3 +24,4 @@
 	</div>
     </div>
 </div>
+  

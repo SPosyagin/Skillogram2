@@ -1,7 +1,11 @@
 <?php
 
-$like = new Likes;
-$like->getLike();
+//$addlikes = new Likes();
+//$addlikes->addLike();
+
+echo json_encode(['status' => 'success']);
+
+
 
 
 

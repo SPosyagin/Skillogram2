@@ -1,8 +1,9 @@
 <?php
 
 class Likes {
+    public $like = [];
 
-    public function getLike() {
+    public function addLike() {
         $user_id = $_SESSION['user']['id'];
         $post_id = $_POST['post_id'];
 
@@ -28,4 +29,13 @@ class Likes {
             $count->execute([$post_id]);
         }
     }
+
+
+    public function checkLike(){
+        $user_id = $_SESSION['user']['id'];
+        $query = DB::getConnection()->query("SELECT post_id FROM likes WHERE user_id = $user_id");
+        $likes = $query->fetchAll(PDO::FETCH_ASSOC);
+               
+       return $likes;
+}
 }
