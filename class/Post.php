@@ -10,26 +10,26 @@ class Post {
         $likes = Likes::checkLike(); //возвращает двумерный массив со всеми пост_ид где есть лайк у вошедшего юзера 
         $post_id = array_column($likes, 'post_id'); // преобразует в одномерный массив
         
-        while ($post = $posts->fetch(PDO::FETCH_ASSOC)):
+        foreach($posts as $post) {
             //если стоит лайк то присваивает стиль актив
             if(in_array($post['post_id'], $post_id)){
-                $like_status = 'likes_active';
+                $like_status = 'active';
             } else {
-                $like_status = 'likes';
+                $like_status = '';
             } 
-
-            require 'html/post_form.php';
 
             if ($post['post_id'] % 5 == 0) {                 //Выводит рекламу после каждого 5го поста
                 $advs = $this->getAdvertising();
 
-                while ($adv = $advs->fetchAll(PDO::FETCH_ASSOC)):
+                while ($adv = $advs->fetchAll(PDO::FETCH_ASSOC)){
                     $rand = array_rand($adv, 1);
                     $adv = $adv[$rand];
                     require 'html/advertising_form.php';
-                endwhile;
+                }
             }
-        endwhile;
+            require 'html/post_form.php';
+        }
+        require 'html/load_post.html';
     }
 
     public function AddPost() {
@@ -64,7 +64,7 @@ class Post {
                     user_id = "' . $_SESSION['user']['id'] . '",
                     added_at = "' . date('Y-m-d H:i:s') . '",
                     content = "' . $destination . '", 
-                    count_like = "' . mt_rand(0, 1000) . '",
+                    count_like = 0,
                     comment = "' . $text . '",
                     hash_tag = "' . $hashtag . '"
                 ');
@@ -97,8 +97,26 @@ class Post {
         ");
 
         $query->execute($bind);
+        $posts = $query->fetch(PDO::FETCH_ASSOC);
+        
+        $posts= [];
+            while($post = $query->fetch(PDO::FETCH_ASSOC)){
+                $posts[$post['post_id']] = $post;
+                
+            }
+            
+        $a = array_fill(0, count($posts), '?');    
+        $placeholder = implode(',', $a);
 
-        return $query;
+        $query = DB::getConnection()->prepare("SELECT * FROM post_comment WHERE post_id IN ({$placeholder}) ORDER BY id DESC");
+        $query->execute(array_keys($posts));
+        
+        while($post_comment = $query->fetch(PDO::FETCH_ASSOC)){
+            $posts[$post_comment['post_id']]['comments'][] = $post_comment;
+        }
+    
+        
+        return $posts;
     }
 
     public function getAdvertising() {

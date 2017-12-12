@@ -1,27 +1,66 @@
 <div id="content_container">
-    <div class = "post" data-post_id = "<?=$post['post_id'];?>">
-	<div class="avatar">
-		<img src=<?php echo $post['avatar']; ?> /> 
-	</div>
-	<div class="username">
-		<?php echo $post['login']; ?>
-	</div>
-	<div class="time">
-		<?php echo $post['added_at']; ?>
-	</div>
-	<div class="content">
-		<img src=<?php echo $post['content']; ?> />
-	</div>
-	<div class=<?php echo $like_status ;?>></div>
+    <div class = "post" data-post_id = "<?= $post['post_id']; ?>">
+        <div class="avatar">
+            <img src=<?php echo $post['avatar']; ?> /> 
+        </div>
+        <div class="username">
+            <?php echo $post['login']; ?>
+        </div>
+        <div class="time">
+            <?php echo $post['added_at']; ?>
+        </div>
+        <div class="content">
+            <img src=<?php echo $post['content']; ?> />
+        </div>
+        <div class='<?php echo 'like ' . $like_status; ?>'></div>
         <div class="count_like">
-                <span><?php echo $post['count_like']; ?></span>
-	</div>
-	<div class="comment">
-		<?php echo $post['comment']; ?>
-	</div>
-	<div class="hash_tag">
-		<?php echo $post['hash_tag']; ?>
-	</div>
+            <?php echo $post['count_like']; ?>
+        </div>
+        <div class="comment">
+            <?php echo $post['comment']; ?>
+        </div>
+
+        <div class="hash_tag">
+            <?php echo $post['hash_tag']; ?>
+        </div>
+        <div class="add_comment">
+            <form class='post_comment_add' action="" method="post">
+                <input type='hidden' name='act' value='post_comment_add'>
+                <input type="hidden" name='post_id' value="<?=$post['post_id'];?>">
+                <textarea class='text_area' name='comment'></textarea>
+                <center><input class="send_post_comment" type="submit" name="submit" value="Отправить!"></center>
+            </form>
+        </div>
+        <?php if(!empty($post['comments'])): ?>
+        <hr>
+        <div class="post_comment">
+            
+            <?php $count = 0; ?>
+            <?php foreach ($post['comments'] as $comment): ?>
+                <?php 
+                
+                $user_data = Comment::getUserDataCommented($comment);
+                
+                if($count++ >=3) {
+                    break;
+                }
+                ?>
+            <div class="avatar_comm" data-avatar=<?php echo $user_data['avatar']; ?>>
+                <img src=<?php echo $user_data['avatar']; ?> /> 
+            </div>
+            <div class="username_comm" data-login='<?php echo $user_data['login'];?>'>
+                <?php echo $user_data['login'];?>
+            </div>
+            <div class="time_comm" data-added_at='<?php echo $comment['added_at'];?>'>
+                <?php echo $comment['added_at'];?>
+            </div>
+            <div class="text_comm" data-text=' <?php echo $comment['text'];?>'>
+                <?php echo $comment['text'];?>
+            </div>
+            <hr>
+                <?php endforeach; ?>
+        </div> 
+        <?php endif; ?>
+        
     </div>
 </div>
-  

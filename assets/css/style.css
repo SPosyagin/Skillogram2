@@ -3,140 +3,203 @@ a {
     font-family: Georgia;
 }
 #logo {
-	height: 70px;
-	float:left;
+    height: 70px;
+    float:left;
 }
 #header {
-	text-align: right;
-	height: 75px;
+    text-align: right;
+    height: 75px;
 }
 #menu li {
-	display: inline-block;
-	font-size: 25px;
-	padding:  20px 4px;
+    display: inline-block;
+    font-size: 25px;
+    padding:  20px 4px;
 }
 #search {
-	padding-right: 10px;
-	float: right;
+    padding-right: 10px;
+    float: right;
 }
 #content_container {
-	width: 400px;
-	margin: 30px auto;
+    width: 400px;
+    margin: 30px auto;
     outline: 1px solid #000; /* Чёрная рамка */
     border: 10px solid #fff; /* Белая рамка */
-     border-radius: 10px; 
-   }
+    border-radius: 30px; 
+}
 .avatar {
-	float: left;
-	width: 40px;
-	height: 40px;
-	padding-bottom: 5px;
+    float: left;
+    width: 40px;
+    height: 40px;
+    padding-bottom: 5px;
 
 }
-.content {
-	padding: 10px 0px;
+.avatar img {
+    margin: auto;
+    max-width: 40px;
+    max-height: 40px;
 }
-	.content img {
-		margin: auto;
-		max-width: 400px;
-		
-	}
+.content {
+    padding: 10px 0px;
+}
+.content img {
+    margin: auto;
+    max-width: 400px;
+
+}
 .username {
-	font-size: 20px;
-	margin-left: 50px;
+    font-size: 20px;
+    margin-left: 50px;
 }
 .time {
-	font-size: 15px;
-        margin-left: 50px;
+    font-size: 15px;
+    margin-left: 50px;
 }
-.likes {
-        background-image: url(../img/newlike.png);
-	float: left;
-        margin-left: 10px;
-	margin-top: 17px;
-        width: 25px;
-        height: 25px;
+.like {
+    background-image: url(../img/newlike.png);
+    float: left;
+    margin-left: 10px;
+    margin-top: 17px;
+    width: 25px;
+    height: 25px;
 }
-.likes_active {
-        background-image: url(../img/newlike.png);
-        background-color: red;
-        float: left;
-        margin-left: 10px;
-	margin-top: 17px;
-        width: 25px;
-        height: 25px;
+.active {
+    background-image: url(../img/newlike.png);
+    background-color: red;
+    float: left;
+    margin-left: 10px;
+    margin-top: 17px;
+    width: 25px;
+    height: 25px;
 }
 
 .count_like {
-        float: left;
-        margin-left: 5px;
-	margin-top: 15px;
-	font-size: 25px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 15px;
+    font-size: 25px;
 }
 .comment {
-	font-size: 17px;
-	margin-left: 80px;
+    font-size: 17px;
+    margin-left: 90px;
+}
+.comment_adv {
+    font-size: 17px;
+    margin: 10px;
 }
 .hash_tag {
-	font-size: 15px;
-	padding-bottom: 20px;
-	margin-left: 80px;
+    font-size: 15px;
+    padding-bottom: 20px;
+    margin-left: 90px;
 }
 #footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	height: 40px;
-	width: 100%;
+
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
 }
 .contacts_test {
-	margin-top: 50px;
-	text-align: center;
-	font-size: 40px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
 }
 .posts_send {
-	width: 400px;
-	margin: 50px auto;
-	text-align: center;
-	background-color: #E3E7DA;
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #E3E7DA;
 }
 .send_text {
-	margin: 10px auto;
-	padding: 3px;
+    margin: 10px auto;
+    padding: 3px;
 }
 .button {
-	margin-bottom: 20px;
-	text-align: center;
-        border: 1px solid #333; 
-        display: inline-block;
-        padding: 5px 15px; 
-        text-decoration: none; 
-        color: #000; 
- }
- 	.button:hover {
- 		box-shadow: 0 0 5px rgba(0,0,0,0.3);
- 		background: linear-gradient(to bottom, #fcfff4, #e9e9ce);
- 		color: #a00;
- 	}
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #333; 
+    display: inline-block;
+    padding: 5px 15px; 
+    text-decoration: none; 
+    color: #000; 
+}
+.button:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    background: linear-gradient(to bottom, #fcfff4, #e9e9ce);
+    color: #a00;
+}
 .sorry {
-	margin: 50px auto;
-	text-align: center;
-	font-size: 40px;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 40px;
 }
 .result {
-	font-size: 30px;
-	text-align: center;
+    font-size: 30px;
+    text-align: center;
 }
 .enter {
-	width: 400px;
-	margin: 50px auto;
-	text-align: center;
-	background-color: #E3E7DA;
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #E3E7DA;
 }
 .form_login {
-	margin: 10px auto;
-	padding: 3px;
+    margin: 10px auto;
+    padding: 3px;
 }
 #login {
     font-size: 20px;
+}
+#load{
+    width:150px;
+    height:30px;
+    text-align:center;
+    margin: 10px auto;
+}
+.load_button {
+    margin: 5px;
+    cursor:pointer;
+    background: #6483aa;
+    color:#fff;
+    padding: 4px 10px 4px 10px;
+    border:1px solid #2f4561;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.send_comment {
+    margin: 5px;
+}
+.avatar_comm {
+    float: left;
+    width: 40px;
+    height: 40px;
+    padding-bottom: 5px;
+
+}
+.avatar_comm img {
+    margin: auto;
+    max-width: 40px;
+    max-height: 40px;
+}
+.text_comm {
+    font-size: 15px;
+    margin-top: 10px;
+}
+.username_comm {
+    font-size: 20px;
+    margin-left: 50px;
+}
+.time_comm {
+    font-size: 17px;
+    margin-left: 50px;
+}
+.text_area {
+    width: 400px;
+    height: 40px;
+}
+.send_post_comment {
+    margin: 5px;
+}
+.post_comment_add {
+    margin-bottom: 0px;
 }

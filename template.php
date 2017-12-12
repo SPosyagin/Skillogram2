@@ -1,4 +1,10 @@
-<html>
+<?php
+if(!empty($_SESSION['user'])){
+    require 'html/header.php';
+} else {
+    require 'html/header_start.php'; //Если пользователь не авторизован, то выводить упрощенный header
+}
+?>
     <body>
               
         <?php echo $content; ?>
@@ -14,4 +20,3 @@
         
         <?php require 'html/footer.php' ?>
     </body>
-</html>

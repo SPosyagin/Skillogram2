@@ -62,12 +62,13 @@ class User {
                 $result = DB::getConnection()->prepare('INSERT INTO user SET login = ?, password = ?, avatar = ?');
                 $result->execute([$login, $password, $destination]);
                 
-                $_SESSION['user'] = $login;
+                $user_data = self::getUserData();
+                $_SESSION['user'] = $user_data;
                 $_SESSION['last_ip'] = $_SERVER['REMOTE_ADDR'];
                 setcookie('last_login', $_REQUEST['login'], time() + 86400, '/');
-                
-                exit;
+               
                 header('Location: index.php?act=home');
+                exit;
             } catch (Exception $e) {
                 $_SESSION['message'][] = '<center>Ошибка: Логин занят</center>';
             }
