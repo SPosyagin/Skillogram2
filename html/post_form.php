@@ -23,7 +23,7 @@
         <div class="hash_tag">
             <?php echo $post['hash_tag']; ?>
         </div>
-        <div class="add_comment">
+        <div class="add_comment" data-post_id = "<?= $post['post_id']; ?>">
             <form class='post_comment_add' action="" method="post">
                 <input type='hidden' name='act' value='post_comment_add'>
                 <input type="hidden" name='post_id' value="<?=$post['post_id'];?>">
@@ -45,19 +45,21 @@
                     break;
                 }
                 ?>
-            <div class="avatar_comm" data-avatar=<?php echo $user_data['avatar']; ?>>
-                <img src=<?php echo $user_data['avatar']; ?> /> 
-            </div>
-            <div class="username_comm" data-login='<?php echo $user_data['login'];?>'>
-                <?php echo $user_data['login'];?>
-            </div>
-            <div class="time_comm" data-added_at='<?php echo $comment['added_at'];?>'>
-                <?php echo $comment['added_at'];?>
-            </div>
-            <div class="text_comm" data-text=' <?php echo $comment['text'];?>'>
-                <?php echo $comment['text'];?>
-            </div>
+            <div class='post_comment_one'>
+                <div class="avatar_comm">
+                    <img src=<?php echo $user_data['avatar']; ?> /> 
+                </div>
+                <div class="username_comm">
+                    <?php echo $user_data['login'];?>
+                </div>
+                <div class="time_comm">
+                    <?php echo $comment['added_at'];?>
+                </div>
+                <div class="text_comm">
+                    <?php echo $comment['text'];?>
+                </div>
             <hr>
+            </div>
                 <?php endforeach; ?>
         </div> 
         <?php endif; ?>

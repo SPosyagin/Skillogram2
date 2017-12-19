@@ -5,5 +5,5 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <div align="center">
-	<img src="assets/img/p_logo.png" height="100" />
+	<img src="assets/img/p_logo_login.png" height="100" />
 </div>

@@ -57,15 +57,26 @@ $(function () {
             type: form.attr('method'),
             url: form.attr('action'),
             data: form.serialize(),
-        
+            
+
+            dataType: 'json',
+
             success: function (response) {
-                
+                var add_comment = $('div.add_comment[data-post_id =' + response.post_id + ']');
+
+                add_comment.append('<hr>');
+                add_comment.append('<div class="post_comment_one">');
+                add_comment.append('<div class="avatar_comm"><img src=' + response.avatar + ' /></div>');
+                add_comment.append('<div class="username_comm">' + response.username + '</div>');
+                add_comment.append('<div class="time_comm">' + response.added_at + '</div>');
+                add_comment.append('<div class="text_comm">' + response.text + '</div>');
+                add_comment.append('</div>');
+                $('.post_comment_add').get(0).reset();
             },
             error: function (response) {
-               
-            },  
+            }
         });
-        e.preventDefault();
+            e.preventDefault();
     });
 });
 

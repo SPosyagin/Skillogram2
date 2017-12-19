@@ -21,5 +21,6 @@ class Comment {
             $insert = DB::getConnection()->prepare("INSERT INTO post_comment SET post_id = ?, user_id = ?, added_at = ?, text = ?");
             $insert->execute([$post_id, $user_id, $added_at, $text]);
         } 
+        
     }
 }
